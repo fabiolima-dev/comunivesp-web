@@ -18,7 +18,16 @@
   h1 {
     @apply font-main font-extrabold text-5xl;
   }
+  h2 {
+    @apply font-main font-bold text-4xl;
+  }
+  p {
+    @apply font-text text-tertiary;
+  }
   button {
-    @apply bg-secondary text-quarternary rounded-2xl font-main font-bold h-10;
+    @apply bg-secondary text-quarternary rounded-2xl font-main font-bold h-10 w-80;
+  }
+  input {
+    @apply bg-tertiary rounded-2xl h-8 p-4;
   }
 }
