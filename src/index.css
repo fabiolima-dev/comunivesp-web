@@ -7,7 +7,8 @@
   --color-primary: #db4545;
   --color-secondary: #141313;
   --color-tertiary: #f2f2f2;
-  --color-quarternary: #ffffff;
+  --color-quaternary: #ffffff;
+  --color-quinary: #c5c5c5;
 }
 
 @layer base {
@@ -24,10 +25,13 @@
   p {
     @apply font-text text-tertiary;
   }
+  a {
+    @apply font-text text-tertiary;
+  }
   button {
-    @apply bg-secondary text-quarternary rounded-2xl font-main font-bold h-10 w-80;
+    @apply bg-secondary text-quaternary rounded-2xl font-main font-bold h-10 w-80 cursor-pointer;
   }
   input {
-    @apply bg-tertiary rounded-2xl h-8 p-4;
+    @apply bg-tertiary rounded-2xl h-10 p-4;
   }
 }
