@@ -14,7 +14,7 @@
 @layer base {
   html,
   body {
-    @apply h-full;
+    @apply h-full w-full;
   }
   h1 {
     @apply font-main font-extrabold text-5xl;

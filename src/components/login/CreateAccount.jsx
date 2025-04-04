@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function CreateAccount() {
   return (
-    <form className="flex flex-col justify-around h-8/12 bg-secondary w-full rounded-4xl p-10 gap-4">
+    <form className="flex flex-col justify-around h-full bg-secondary w-full rounded-4xl p-10 gap-8">
       <h2 className="text-tertiary">Criar conta</h2>
       <div className="flex flex-col items-end w-full gap-8">
         <input className="w-full" placeholder="e-mail univesp"></input>
@@ -11,7 +11,7 @@ function CreateAccount() {
         <input className="w-full" placeholder="confirmar senha"></input>
       </div>
       <div className="flex flex-col gap-1 w-full items-center">
-        <Link className="w-full" to="/login">
+        <Link className="w-full" to="/cadastro">
           <button className="bg-primary text-quaternary w-full">
             Registrar
           </button>
