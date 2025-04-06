@@ -18,7 +18,7 @@ function LoginPage() {
         <img className="w-full" src={Illustration} alt="Ilustração" />
       </div>
       <img
-        className="absolute rotate-15 opacity-5 -z-1 right-60"
+        className="absolute rotate-15 opacity-5 -z-1 right-60 w-lg"
         src={UnivespBg}
         alt="Background"
       />

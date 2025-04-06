@@ -11,12 +11,13 @@ import NewPassword from "./components/login/NewPassword.jsx";
 import EmailConfirmation from "./components/login/EmailConfirmation.jsx";
 import PasswordChanged from "./components/login/PasswordChanged.jsx";
 import PasswordReset from "./components/login/PasswordReset.jsx";
+import RequestRegistration from "./components/login/RequestRegistration.jsx";
 
 const RoutesConfig = () => (
   <Router>
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<LoginPage />}>
+      <Route path="/" element={<Layout />}>
+        <Route element={<LoginPage />}>
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="cadastro" element={<CreateAccount />} />
@@ -25,6 +26,10 @@ const RoutesConfig = () => (
           <Route path="confirmacao-email" element={<EmailConfirmation />} />
           <Route path="recuperacao-senha" element={<PasswordReset />} />
           <Route path="senha-alterada" element={<PasswordChanged />} />
+          <Route
+            path="solicitacao-cadastro"
+            element={<RequestRegistration />}
+          />
         </Route>
       </Route>
     </Routes>
