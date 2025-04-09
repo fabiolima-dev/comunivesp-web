@@ -51,7 +51,7 @@ function RequestRegistration() {
         })}
       ></input>
       {errors.email && <p className="text-primary">{errors.email.message}</p>}
-      <button className="bg-primary text-quaternary w-full">Enviar</button>
+      <button className="btn bg-primary text-quaternary w-full">Enviar</button>
     </form>
   );
 }

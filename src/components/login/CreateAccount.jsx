@@ -12,13 +12,15 @@ function CreateAccount() {
       </div>
       <div className="flex flex-col gap-1 w-full items-center">
         <Link className="w-full" to="/cadastro">
-          <button className="bg-primary text-quaternary w-full">
+          <button className=" btn bg-primary text-quaternary w-full">
             Registrar
           </button>
         </Link>
         <p>ou</p>
         <Link className="w-full" to="/login">
-          <button className="bg-quinary text-secondary w-full">Entrar</button>
+          <button className="btn bg-quinary text-secondary w-full">
+            Entrar
+          </button>
         </Link>
       </div>
     </form>

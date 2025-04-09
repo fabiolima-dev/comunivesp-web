@@ -31,4 +31,7 @@
   input {
     @apply bg-tertiary rounded-2xl h-10 p-4;
   }
+  .btn {
+    @apply bg-secondary text-quaternary rounded-2xl font-main font-bold h-10 w-80 cursor-pointer;
+  }
 }

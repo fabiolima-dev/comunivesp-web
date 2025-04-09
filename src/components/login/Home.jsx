@@ -8,11 +8,13 @@ function Home() {
       </h1>
       <div className="flex flex-col gap-1 w-full items-center">
         <Link className="w-full" to="/login">
-          <button className="bg-primary text-quarternary w-full">Entrar</button>
+          <button className="btn bg-primary text-quarternary w-full">
+            Entrar
+          </button>
         </Link>
         <p className="text-secondary">ou</p>
         <Link className="w-full" to="/cadastro">
-          <button className="w-full">Registrar</button>
+          <button className="btn w-full">Registrar</button>
         </Link>
       </div>
     </div>

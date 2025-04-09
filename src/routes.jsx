@@ -12,7 +12,6 @@ import EmailConfirmation from "./components/login/EmailConfirmation.jsx";
 import PasswordChanged from "./components/login/PasswordChanged.jsx";
 import PasswordReset from "./components/login/PasswordReset.jsx";
 import RequestRegistration from "./components/login/RequestRegistration.jsx";
-import Perfil from "./components/perfil/Perfil.jsx";
 import PerfilPage from "./pages/PerfilPage.jsx";
 
 const RoutesConfig = () => (
@@ -33,9 +32,7 @@ const RoutesConfig = () => (
             element={<RequestRegistration />}
           />
         </Route>
-        <Route path="profile" element={<PerfilPage />}>
-          <Route index element={<Perfil />} />
-        </Route>
+        <Route path="profile" element={<PerfilPage />}></Route>
       </Route>
     </Routes>
   </Router>

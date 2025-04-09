@@ -9,7 +9,7 @@ function PasswordChanged() {
         Nova senha cadastrada com sucesso
       </h2>
       <Link className="w-full" to="/login">
-        <button className="bg-primary w-full">Entrar</button>
+        <button className="btn bg-primary w-full">Entrar</button>
       </Link>
     </form>
   );
