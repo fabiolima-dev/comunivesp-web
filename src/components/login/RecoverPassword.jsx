@@ -12,7 +12,9 @@ function RecoverPassword() {
       </div>
       <div className="flex flex-col gap-1 w-full items-center">
         <Link className="w-full" to="/login">
-          <button className="bg-primary text-quaternary w-full">Enviar</button>
+          <button className="btn bg-primary text-quaternary w-full">
+            Enviar
+          </button>
         </Link>
       </div>
     </form>

@@ -9,7 +9,9 @@ function NewPassword() {
         <input className="w-full" placeholder="repita a nova senha"></input>
       </div>
       <Link className="w-full" to="/login">
-        <button className="bg-primary text-quaternary w-full">Redefinir</button>
+        <button className="btn bg-primary text-quaternary w-full">
+          Redefinir
+        </button>
       </Link>
     </form>
   );
