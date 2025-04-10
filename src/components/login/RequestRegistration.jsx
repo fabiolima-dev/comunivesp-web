@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function RequestRegistration() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -19,6 +21,7 @@ function RequestRegistration() {
       );
       if (response.ok) {
         console.log("email enviado com sucesso");
+        navigate("/confirmacao-email");
       } else {
         console.error("Falha ao enviar o e-mail de autenticacao");
       }
