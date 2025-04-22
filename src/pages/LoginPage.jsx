@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import LogoUnivesp from "/logo-univesp.svg?url";
 import Illustration from "/illustration.svg?url";
-import UnivespBg from "/univesp-bg.svg?url";
 
 function LoginPage() {
   return (
@@ -17,11 +16,6 @@ function LoginPage() {
       <div className="justify-center w-4xl shrink-1 hidden lg:flex">
         <img className="w-full" src={Illustration} alt="Ilustração" />
       </div>
-      <img
-        className="absolute rotate-15 opacity-5 -z-1 right-60 w-lg"
-        src={UnivespBg}
-        alt="Background"
-      />
     </div>
   );
 }

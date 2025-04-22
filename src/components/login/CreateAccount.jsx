@@ -76,7 +76,9 @@ function CreateAccount() {
         </button>
         <p>ou</p>
         <Link className="w-full" to="/login">
-          <button className="bg-quinary text-secondary w-full">Entrar</button>
+          <button className="btn bg-quinary text-secondary w-full">
+            Entrar
+          </button>
         </Link>
       </div>
     </form>

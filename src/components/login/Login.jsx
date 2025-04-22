@@ -51,7 +51,7 @@ function Login() {
         </button>
         <p>ou</p>
         <Link className="w-full" to="/cadastro">
-          <button className="bg-quinary text-secondary w-full">
+          <button className="btn bg-quinary text-secondary w-full">
             Registrar
           </button>
         </Link>
