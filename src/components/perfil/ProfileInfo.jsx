@@ -38,8 +38,6 @@ function ProfileInfo() {
           </li>
         </ul>
         <br></br>
-        <h2 className="text-2xl font-bold">Especialidades</h2>
-        
       </div>
     </>
   );
