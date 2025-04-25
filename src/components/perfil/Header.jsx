@@ -34,7 +34,7 @@ function Header() {
                 </li>
                 <li>
                   <a
-                    href="/editarPerfil"
+                    href="/edit-profile"
                     className="text-gray-800 hover:text-red-500"
                   >
                     Editar perfil

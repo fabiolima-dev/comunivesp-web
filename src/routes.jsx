@@ -13,6 +13,7 @@ import PasswordChanged from "./components/login/PasswordChanged.jsx";
 import PasswordReset from "./components/login/PasswordReset.jsx";
 import RequestRegistration from "./components/login/RequestRegistration.jsx";
 import PerfilPage from "./pages/PerfilPage.jsx";
+import PerfilEditPage from "./pages/PerfilEditPage.jsx";
 
 const RoutesConfig = () => (
   <Router>
@@ -33,6 +34,7 @@ const RoutesConfig = () => (
           />
         </Route>
         <Route path="profile" element={<PerfilPage />}></Route>
+        <Route path="edit-profile" element={<PerfilEditPage />}></Route>
       </Route>
     </Routes>
   </Router>
