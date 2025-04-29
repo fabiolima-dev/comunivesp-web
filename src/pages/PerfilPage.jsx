@@ -10,7 +10,7 @@ function PerfilPage() {
       <Header />
       <ProfileInfo />
       <Outlet />
-      <h2 className="my-5 text-2xl font-bold">Especialidades :</h2>
+      <h2 className="my-5 text-2xl font-bold">Interesses :</h2>
       <Tags />
       <button className="btn" onClick={console.log("maneiro")}>
         Editar Perfil

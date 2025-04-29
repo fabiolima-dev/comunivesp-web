@@ -1,9 +1,10 @@
-import { UsersIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
 
 function ProfileForm() {
   const [userName, setUserName] = useState("Fernandinho Beira-mar");
   const [userAnoIngresso, setUserAnoIngresso] = useState(2020);
+  const [userPolo, setUserPolo] = useState("");
+  const [userInteresses, setSelectedInteresses] = useState([]);
 
   const handleNameChange = (event) => {
     setUserName(event.target.value);
@@ -16,6 +17,29 @@ function ProfileForm() {
       setUserAnoIngresso(value);
     }
     //fazer logica que permita o ano de ingresso entre {{criacao da univesp}} e ano que estamos (simples de fazer)
+  };
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setSelectedInteresses([...userInteresses, value]);
+    } else {
+      setSelectedInteresses(
+        userInteresses.filter((interesse) => interesse !== value),
+      );
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = {
+      userName,
+      userAnoIngresso,
+      userInteresses,
+      userPolo,
+    };
+
+    console.log("dados do form:", formData);
   };
 
   const cursos = [
@@ -30,7 +54,60 @@ function ProfileForm() {
     "Processos gerenciais",
   ];
 
-  const interesses = [];
+  const interesses = [
+    "Pensamento Computacional",
+    "Matemática Básica",
+    "Leitura e Produção de Textos",
+    "Inglês",
+    "Ética, Cidadania e Sociedade",
+    "Projetos e métodos para a produção do conhecimento",
+    "Algoritmos e Programação de Computadores I",
+    "Algoritmos e Programação de Computadores II",
+    "Cálculo I",
+    "Fundamentos Matemáticos para Computação",
+    "Introdução a Conceitos de Computação",
+    "Fundamentos de Internet e Web",
+    "Sistemas Computacionais",
+    "Estatística e Probabilidade",
+    "Estruturas de Dados",
+    "Programação Orientada a Objetos",
+    "Formação Profissional em Computação",
+    "Gestão da Inovação e Desenvolvimento de Produtos",
+    "Banco de Dados",
+    "Bancos de Dados",
+    "Desenvolvimento web",
+    "Introdução a Ciência de Dados",
+    "Engenharia de Software",
+    "Geometria Analítica e Álgebra Linear",
+    "Modelagem e Inferência Estatística",
+    "Mineração de Dados",
+    "Infraestrutura para Sistemas de Software",
+    "Computação Escalável",
+    "Visualização Computacional",
+    "Aprendizado de Máquinas",
+    "Impactos da Computação na Sociedade",
+    "Visão Computacional",
+    "Redes Neurais",
+    "Aprendizado Profundo",
+    "Segurança da Informação",
+    "Planejamento Estratégico de Negócios",
+    "Processamento de Linguagem Natural",
+    "Física do Movimento",
+    "Circuitos Digitais",
+    "Protocolos de Comunicação IoT",
+    "Sistemas Embarcados",
+    "Plataforma de Ingestão e Análise de Dados",
+    "Interface Humano-Computador",
+    "Mecânica dos Sólidos e dos Fluidos",
+    "Processamento Digital de Sinais",
+    "Projeto e Análise de Algoritmos",
+    "Desenvolvimento para Dispositivos Móveis",
+    "Química Tecnológica e Ambiental",
+    "Controle e Automação",
+    "Compiladores",
+    "Cidades Inteligentes",
+    "Legislação e Responsabilidade Profissional",
+  ];
 
   const polosUnivesp = [
     "Adamantina",
@@ -305,7 +382,7 @@ function ProfileForm() {
         <label>
           <h2 className="my-5 text-2xl font-bold">Eixo:</h2>
         </label>
-        <select className="bg-tertiary rounded-2xl h-10 p-4 border-1">
+        <select className="bg-tertiary rounded-2xl h-10 pl-4 pb-1 border-1">
           {cursos.map((curso, index) => (
             <option key={index} value={curso}>
               {/* futuramente colocar o value do user vindo da API */}
@@ -316,11 +393,14 @@ function ProfileForm() {
         <label>
           <h2 className="my-5 text-2xl font-bold">Polo:</h2>
         </label>
-        <select className="bg-tertiary rounded-2xl h-10 p-4 border-1">
-          {polosUnivesp.map((polosUnivesp, index) => (
-            <option key={index} value={polosUnivesp}>
-              {/* futuramente colocar o value do user vindo da API */}
-              {polosUnivesp}
+        <select
+          className="bg-tertiary rounded-2xl h-10 pl-4 pb-1 border-1"
+          value={userPolo}
+          onChange={(event) => setUserPolo(event.target.value)}
+        >
+          {polosUnivesp.map((polo, index) => (
+            <option key={index} value={polo}>
+              {polo}
             </option>
           ))}
         </select>
@@ -337,9 +417,27 @@ function ProfileForm() {
         <label>
           <h2 className="my-5 text-2xl font-bold">Interesses:</h2>
         </label>
-        {/* colocar um select de todas as materias de todos os cursos + langs de programacao e assuntos de programacao e dados */}
-        {/* teste para commit */}
+        <div className="p-1 border-1 border-black rounded-2xl h-60 pl-4 overflow-auto">
+          {interesses.map((interesse, index) => (
+            <label key={index} className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                value={interesse}
+                checked={userInteresses.includes(interesse)}
+                onChange={handleCheckboxChange} // Passa a referência da função
+                className="form-checkbox"
+              />
+              {interesse}
+            </label>
+          ))}
+        </div>
       </form>
+      <button
+        onClick={handleSubmit}
+        className="mt-6  bg-secondary text-quaternary rounded-2xl font-main font-bold h-10 w-80 cursor-pointer"
+      >
+        Salvar perfil
+      </button>
     </div>
   );
 }
