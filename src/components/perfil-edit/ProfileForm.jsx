@@ -369,7 +369,7 @@ function ProfileForm() {
 
   let anoDeIngresso = 2020;
 
-  // CRIAR UM SERVICE OU SEJA LA OQ PARA ESSAS VARIAVEIS AMANHA
+  // CRIAR UM SERVICE OU SEJA LA OQ PARA ESSAS VARIAVEIS E lOGICAS
 
   return (
     <div className="m-4">
