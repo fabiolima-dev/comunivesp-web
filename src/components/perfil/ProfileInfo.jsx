@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProfileInfo() {
+function ProfileInfo({ perfil }) {
   const eixo = "Tecnologia da informação";
   const polo = "São Paulo";
   const anoDeIngresso = "2023";
@@ -17,7 +17,7 @@ function ProfileInfo() {
             alt="profile-pic"
             className="w-16 h-16 rounded-full object-cover"
           />
-          <h1 className="text-2xl font-bold">Fernandinho Beira-mar</h1>
+          {perfil && <h1 className="text-2xl font-bold">{perfil.nome}</h1>}
         </div>
         <ul className="flex flex-col gap-2">
           <li>

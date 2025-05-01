@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+const backendUrl = import.meta.env.VITE_BACK_URL;
 
 function Login() {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:3000/auth/login", {
+      const response = await fetch(`${backendUrl}/auth/login`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(data),
@@ -15,9 +19,14 @@ function Login() {
       const resBody = await response.json();
 
       if (response.ok) {
-        console.log("Login bem-sucedido!", resBody);
+        console.log(resBody.message);
 
         localStorage.setItem("token", resBody.token);
+        saveToken(resBody.token);
+
+        saveUser(resBody.user);
+
+        navigate(`../perfil/${resBody.user.id}`);
       } else {
         alert(resBody.error);
       }
@@ -46,7 +55,7 @@ function Login() {
         <Link>Esqueceu a senha?</Link>
       </div>
       <div className="flex flex-col gap-1 w-full items-center">
-        <button type="submit" className="bg-primary text-quaternary w-full">
+        <button type="submit" className="btn bg-primary text-quaternary w-full">
           Entrar
         </button>
         <p>ou</p>
