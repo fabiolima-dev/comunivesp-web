@@ -29,7 +29,7 @@
     @apply font-text text-tertiary;
   }
   input {
-    @apply bg-tertiary rounded-2xl h-10 p-4;
+    @apply bg-tertiary rounded-2xl h-10 p-4 border-1;
   }
   .btn {
     @apply bg-secondary text-quaternary rounded-2xl font-main font-bold h-10 w-80 cursor-pointer;

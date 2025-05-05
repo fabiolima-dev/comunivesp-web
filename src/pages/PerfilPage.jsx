@@ -5,18 +5,14 @@ import Tags from "../components/perfil/Tags";
 import Status from "../components/perfil/Status";
 
 function PerfilPage() {
-  function editarPerfil() {
-    //edicao de perfil
-    alert("olá mundo");
-  }
   return (
     <>
       <Header />
       <ProfileInfo />
       <Outlet />
-      <h2 className="my-5 text-2xl font-bold">Especialidades :</h2>
+      <h2 className="my-5 text-2xl font-bold">Interesses :</h2>
       <Tags />
-      <button className="btn" onClick={editarPerfil}>
+      <button className="btn" onClick={console.log("maneiro")}>
         Editar Perfil
       </button>
       <Status />
