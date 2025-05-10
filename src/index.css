@@ -27,7 +27,7 @@
   }
   a {
     @apply font-text text-tertiary;
-  }
+  } 
   input {
     @apply bg-tertiary rounded-2xl h-10 p-4 border-1;
   }

@@ -108,7 +108,6 @@ function ProfileForm() {
     "Cidades Inteligentes",
     "Legislação e Responsabilidade Profissional",
   ];
-
   const polosUnivesp = [
     "Adamantina",
     "Aguaí",
