@@ -11,9 +11,9 @@ function CreateQuestion() {
       <Header />
       <div className="bg-[#f2f2f2] rounded-xl w-[100%] h-[100%]">
         <form action="" className="flex flex-col gap-4 p-4">
-          <label htmlFor="">titulo:</label>
+          <label htmlFor="">Título:</label>
           <input className='bg-white' type="text" />
-          <label className="">tema:</label>
+          <label>Tema:</label>
           <select
             name="interesses"
             className=" bg-white py-1 bg-tertiary rounded-2xl h-10 p-4 border-1"
@@ -24,13 +24,14 @@ function CreateQuestion() {
               return <option key={e} value={e}>{e}</option>;
             })}
           </select>
-          <label >Duvida</label>
-          <textarea className="bg-white py-1 bg-tertiary rounded-2xl h-10 p-4 border-1"></textarea>
+          <label >Dúvida</label>
+          <textarea rows='8' className="bg-white py-1 w-full bg-tertiary rounded-2xl h-10 p-4 border-1"></textarea>
         </form>
-        <button class='btn'>Voltar</button> 
-        {/* trocar para link de voltar         */}
-        <button class='btn'>Enviar</button>
       </div>
+      <div className="my-5">
+        <a className='mx-4  py-2.5 px-[136.70px] bg-[#db4545] text-white rounded-2xl font-poppins font-bold h-10 w-80 cursor-pointer' href="/questions">Voltar</a> 
+        <button class='btn'>Enviar</button>
+        </div>
       <Outlet />
     </>
   );
