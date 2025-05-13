@@ -27,12 +27,12 @@ function QuestionBoard() {
       </div>
       <div id="board" className="grid grid-cols-3 gap-4 m-5">
         {questionBoard.map((q)=>{
-            return(<a className=" text-black bg-gray-200 w-[100%] p-5 rounded-2xl cursor-pointer">
+            return(<a className=" text-black bg-gray-200 w-[100%] p-5 rounded-2xl">
                 <h3 className="font-bold text-2xl mt-2">{q.Titulo}</h3>
                 <p className="text-black my-4">De {q.Usuario}</p>
                 <span className="bg-blue-300 p-1 mt-3 rounded-2xl" >{q.Interesse}</span>
                 <p className="text-black my-4">{q.Detalhe}</p>
-                <a className="bg-black p-1 mt-3 rounded-2xl text-white font-bold my-4" href="">Ajudar</a>
+                <a className="bg-black p-1 mt-3 rounded-2xl text-white font-bold my-4  cursor-pointer" href="">Ajudar</a>
             </a>)
         })}
       </div>
