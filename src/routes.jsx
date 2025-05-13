@@ -15,6 +15,7 @@ import RequestRegistration from "./components/login/RequestRegistration.jsx";
 import PerfilPage from "./pages/PerfilPage.jsx";
 import PerfilEditPage from "./pages/PerfilEditPage.jsx";
 import CreateQuestion from "./pages/CreateQuestion.jsx";
+import QuestionPage from "./pages/QuestionPage.jsx";
 
 const RoutesConfig = () => (
   <Router>
@@ -37,6 +38,7 @@ const RoutesConfig = () => (
         <Route path="profile" element={<PerfilPage />}></Route>
         <Route path="edit-profile" element={<PerfilEditPage />}></Route>
         <Route path="question-creation" element={<CreateQuestion />}></Route>
+        <Route path='question' element={<QuestionPage />}></Route>
       </Route>
     </Routes>
   </Router>

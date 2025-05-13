@@ -25,7 +25,8 @@ function CreateQuestion() {
             })}
           </select>
           <label >Dúvida</label>
-          <textarea rows='8' className="bg-white py-1 w-full bg-tertiary rounded-2xl h-10 p-4 border-1"></textarea>
+          <textarea rows='8' maxLength='' placeholder="numero max. de letras: X" className="bg-white py-1 w-full bg-tertiary rounded-2xl h-80 p-4 border-1"></textarea>
+          {/* adicionar maximo de letras conforme o tamanho do banco de dados */}
         </form>
       </div>
       <div className="my-5">
