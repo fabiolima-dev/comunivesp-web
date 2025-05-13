@@ -16,6 +16,7 @@ import PerfilPage from "./pages/PerfilPage.jsx";
 import PerfilEditPage from "./pages/PerfilEditPage.jsx";
 import CreateQuestion from "./pages/CreateQuestion.jsx";
 import QuestionPage from "./pages/QuestionPage.jsx";
+import QuestionBoard from "./pages/QuestionBoard.jsx";
 
 const RoutesConfig = () => (
   <Router>
@@ -39,6 +40,7 @@ const RoutesConfig = () => (
         <Route path="edit-profile" element={<PerfilEditPage />}></Route>
         <Route path="question-creation" element={<CreateQuestion />}></Route>
         <Route path='question' element={<QuestionPage />}></Route>
+        <Route path="question-board" element={<QuestionBoard />}></Route>
       </Route>
     </Routes>
   </Router>

@@ -16,7 +16,7 @@ function Header() {
         <div className="relative">
           <button
             onClick={toggleMenu}
-            className="appearance-none border-none outline-none"
+            className="appearance-none border-none outline-none cursor-pointer"
           >
             <EllipsisHorizontalIcon className="w-15" />
           </button>
@@ -50,7 +50,7 @@ function Header() {
                 </li>
                 <li>
                   <a
-                    href="/criarDuvida"
+                    href="/question-creation"
                     className="text-gray-800 hover:text-red-500"
                   >
                     Criar dúvidas
