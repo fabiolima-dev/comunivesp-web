@@ -32,7 +32,7 @@ function QuestionBoard() {
                 <p className="text-black my-4">De {q.Usuario}</p>
                 <span className="bg-blue-300 p-1 mt-3 rounded-2xl" >{q.Interesse}</span>
                 <p className="text-black my-4">{q.Detalhe}</p>
-                <a className="bg-black p-1 mt-3 rounded-2xl text-white font-bold my-4  cursor-pointer" href="">Ajudar</a>
+                <a className="bg-black p-1 mt-3 rounded-2xl text-white font-bold my-4  cursor-pointer" href="/question">Ajudar</a>
             </a>)
         })}
       </div>
