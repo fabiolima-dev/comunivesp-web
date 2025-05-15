@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/perfil/Header";
-import questionBoard from "../services/questionBoard";
+import questionBoard from "../assets/questionBoard";
 
 function QuestionBoard() {
   return (
