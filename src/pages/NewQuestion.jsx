@@ -1,5 +1,5 @@
 import { useState } from "react";
-import interesses from "../services/interesses";
+import interesses from "../assets/interesses";
 
 function NewQuestion() {
   const [QuestionInteresse, setQuestionInteresse] = useState([]);

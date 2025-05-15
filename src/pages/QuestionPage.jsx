@@ -1,6 +1,6 @@
 import Header from "../components/perfil/Header";
 import { Outlet } from "react-router-dom";
-import QuestionService from "../services/questionService";
+import QuestionService from "../assets/questionAssets";
 
 function Question() {
   const { user, questionTitle, detalhePerguntas, interesse, respostas } =
