@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import interesses from "/src/services/interesses.jsx";
-import cursos from "/src/services/cursos.jsx";
-import polos from "/src/services/polos.jsx";
+import interesses from "/src/assets/interesses.jsx";
+import cursos from "/src/assets/cursos.jsx";
+import polos from "/src/assets/polos.jsx";
 
 function ProfileForm() {
   const [userName, setUserName] = useState("Fernandinho Beira-mar");
