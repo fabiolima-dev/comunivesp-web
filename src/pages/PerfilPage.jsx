@@ -12,9 +12,12 @@ function PerfilPage() {
       <Outlet />
       <h2 className="my-5 text-2xl font-bold">Interesses :</h2>
       <Tags />
-      <button className="btn" onClick={console.log("maneiro")}>
+      <a
+        className="py-1.5 px-20 bg-[#141313] text-white rounded-2xl font-poppins font-bold h-10 w-80 cursor-pointer"
+        href="/edit-profile"
+      >
         Editar Perfil
-      </button>
+      </a>
       <Status />
     </>
   );
