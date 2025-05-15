@@ -2,14 +2,9 @@ import Header from "../components/perfil/Header";
 import { Outlet } from "react-router-dom";
 import QuestionService from "../services/questionService";
 
-function QuestionPage() {
-  const {
-    user,
-    questionTitle,
-    detalhePerguntas,
-    interesse,
-    respostas,
-  } = QuestionService;
+function Question() {
+  const { user, questionTitle, detalhePerguntas, interesse, respostas } =
+    QuestionService;
 
   return (
     <div>
@@ -20,7 +15,9 @@ function QuestionPage() {
       <p className="text-black bg-blue-300 text-sm rounded-2xl inline-block px-2 ">
         {interesse}
       </p>
-      <button className="block my-5 bg-[#db4545] text-white rounded-2xl font-poppins font-bold h-10 w-80 cursor-pointer">Encerrar dúvida</button>
+      <button className="block my-5 bg-[#db4545] text-white rounded-2xl font-poppins font-bold h-10 w-80 cursor-pointer">
+        Encerrar dúvida
+      </button>
 
       <div className="flex-col bg-gray-200 w-[100%] p-5 rounded-2xl">
         {respostas.map((resposta) => (
@@ -39,7 +36,13 @@ function QuestionPage() {
             </div>
           </div>
         ))}
-        <textarea name="" id="" cols="30" rows="10" className="bg-white rounded-2xl w-[100%] p-2 mb-5"></textarea>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          className="bg-white rounded-2xl w-[100%] p-2 mb-5"
+        ></textarea>
         <div className="flex justify-end">
           <button className="bg-[#db4545] text-white rounded-2xl font-poppins font-bold h-10 w-80 cursor-pointer">
             Responder
@@ -51,4 +54,4 @@ function QuestionPage() {
   );
 }
 
-export default QuestionPage;
+export default Question;

@@ -14,7 +14,7 @@ import PasswordReset from "./components/login/PasswordReset.jsx";
 import RequestRegistration from "./components/login/RequestRegistration.jsx";
 import PerfilPage from "./pages/PerfilPage.jsx";
 import PerfilEditPage from "./pages/PerfilEditPage.jsx";
-import CreateQuestion from "./pages/CreateQuestion.jsx";
+import CreateQuestion from "./pages/NewQuestion.jsx";
 import QuestionPage from "./pages/QuestionPage.jsx";
 import QuestionBoard from "./pages/QuestionBoard.jsx";
 
