@@ -17,25 +17,30 @@ import PerfilEditPage from "./pages/PerfilEditPage.jsx";
 import CreateQuestion from "./pages/NewQuestion.jsx";
 import QuestionPage from "./pages/QuestionPage.jsx";
 import QuestionBoard from "./pages/QuestionBoard.jsx";
+import { AuthProvider } from "./contexts/AuthContext.jsx";
 
 const RoutesConfig = () => (
   <Router>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route element={<LoginPage />}>
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="cadastro" element={<CreateAccount />} />
-          <Route path="redefinir-senha" element={<RecoverPassword />} />
-          <Route path="nova-senha" element={<NewPassword />} />
-          <Route path="confirmacao-email" element={<EmailConfirmation />} />
-          <Route path="recuperacao-senha" element={<PasswordReset />} />
-          <Route path="senha-alterada" element={<PasswordChanged />} />
-          <Route
-            path="solicitacao-cadastro"
-            element={<RequestRegistration />}
-          />
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route element={<LoginPage />}>
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="cadastro" element={<CreateAccount />} />
+            <Route path="redefinir-senha" element={<RecoverPassword />} />
+            <Route path="nova-senha" element={<NewPassword />} />
+            <Route path="confirmacao-email" element={<EmailConfirmation />} />
+            <Route path="recuperacao-senha" element={<PasswordReset />} />
+            <Route path="senha-alterada" element={<PasswordChanged />} />
+            <Route
+              path="solicitacao-cadastro"
+              element={<RequestRegistration />}
+            />
+          </Route>
+          <Route path="perfil/:id" element={<PerfilPage />}></Route>
         </Route>
+<<<<<<< HEAD
         <Route path="profile" element={<PerfilPage />}></Route>
         <Route path="edit-profile" element={<PerfilEditPage />}></Route>
         <Route path="question-creation" element={<CreateQuestion />}></Route>
@@ -43,6 +48,10 @@ const RoutesConfig = () => (
         <Route path="question-board" element={<QuestionBoard />}></Route>
       </Route>
     </Routes>
+=======
+      </Routes>
+    </AuthProvider>
+>>>>>>> autenticacao
   </Router>
 );
 
