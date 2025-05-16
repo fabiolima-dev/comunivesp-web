@@ -39,7 +39,6 @@ const RoutesConfig = () => (
             />
           </Route>
           <Route path="perfil/:id" element={<PerfilPage />}></Route>
-          <Route path="profile" element={<PerfilPage />}></Route>
           <Route path="edit-profile" element={<PerfilEditPage />}></Route>
           <Route path="question-creation" element={<CreateQuestion />}></Route>
           <Route path="question" element={<QuestionPage />}></Route>

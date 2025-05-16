@@ -12,13 +12,20 @@ const AuthProvider = ({ children }) => {
   };
 
   const saveUser = (userData) => {
+    localStorage.setItem("user", JSON.stringify(userData));
     setUser(userData);
   };
 
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
+    const savedUser = localStorage.getItem("user");
+
     if (savedToken) {
       setToken(savedToken);
+    }
+
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
     }
   }, []);
 
