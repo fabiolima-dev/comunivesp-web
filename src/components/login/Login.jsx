@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../contexts/useAuth";
 
-const backendUrl = import.meta.env.VITE_BACK_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function Login() {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const { saveToken, saveUser } = useAuth();
 
   const onSubmit = async (data) => {
     try {
