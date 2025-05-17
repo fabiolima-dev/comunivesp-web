@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 function CreateAccount() {
   const navigate = useNavigate();
   const {
@@ -17,14 +19,11 @@ function CreateAccount() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch(
-        "http://localhost:3000/auth/finalizar-cadastro",
-        {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...data, usuarioId }),
-        },
-      );
+      const response = await fetch(`${backendUrl}/auth/finalizar-cadastro`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, usuarioId }),
+      });
       if (response.ok) {
         navigate("/login");
       } else {

@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 function RequestRegistration() {
   const navigate = useNavigate();
   const {
@@ -11,14 +13,11 @@ function RequestRegistration() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch(
-        "http://localhost:3000/auth/solicitacao-cadastro",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: data.email }),
-        },
-      );
+      const response = await fetch(`${backendUrl}/auth/solicitacao-cadastro`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email }),
+      });
       if (response.ok) {
         console.log("email enviado com sucesso");
         navigate("/confirmacao-email");
