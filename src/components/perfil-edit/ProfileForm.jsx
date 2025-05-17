@@ -15,6 +15,39 @@ function ProfileForm() {
   const [error, setError] = useState(null);
   const [eixos, setEixos] = useState([]);
   const [isLoadingEixos, setIsLoadingEixos] = useState(true);
+  const [isLoadingUser, setIsLoadingUser] = useState(true);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(
+          `${backendUrl}/perfil/usuario/${user.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          },
+        );
+
+        if (!response.ok) {
+          throw new Error("Erro ao buscar dados do usuário");
+        }
+
+        const userData = await response.json();
+        setUserName(userData.nome || "");
+        setUserAnoIngresso(userData.anoIngresso || "");
+        setUserEixoId(userData.eixoId || "");
+      } catch (err) {
+        setError(`Erro ao carregar dados do usuário: ${err.message}`);
+      } finally {
+        setIsLoadingUser(false);
+      }
+    };
+
+    if (user) {
+      fetchUserData();
+    }
+  }, [user]);
 
   useEffect(() => {
     const fetchEixos = async () => {
@@ -37,15 +70,6 @@ function ProfileForm() {
 
     fetchEixos();
   }, []);
-
-  useEffect(() => {
-    if (user) {
-      setUserName(user.nome || "");
-      setUserAnoIngresso(user.anoIngresso || "");
-      setUserEixoId(user.eixoId || "");
-      // setSelectedInteresses(user.interesses || []);
-    }
-  }, [user]);
 
   const handleNameChange = (event) => {
     setUserName(event.target.value);
@@ -108,6 +132,10 @@ function ProfileForm() {
     return <div>Carregando...</div>;
   }
 
+  if (isLoadingUser || isLoadingEixos) {
+    return <div>Carregando dados do perfil...</div>;
+  }
+
   return (
     <div className="m-4">
       <h2 className="my-5 text-4xl font-bold">Seu Perfil:</h2>
@@ -125,6 +153,7 @@ function ProfileForm() {
           value={userName}
           onChange={handleNameChange}
           className="w-full p-2 border rounded"
+          placeholder={user.nome || "Digite seu nome"}
           required
         />
         <label>
@@ -137,7 +166,9 @@ function ProfileForm() {
           required
           disabled={isLoadingEixos}
         >
-          <option value="">Selecione um eixo</option>
+          <option value="">
+            {user.eixo ? user.eixo.nome : "Selecione um eixo"}
+          </option>
           {eixos.map((eixo) => (
             <option key={eixo.id} value={eixo.id}>
               {eixo.nome}
@@ -154,6 +185,7 @@ function ProfileForm() {
           onChange={handleYearChange}
           min={2016}
           className="w-full p-2 border rounded"
+          placeholder={user.anoIngresso || "Digite seu ano de ingresso"}
           required
         />
         {/* <label>

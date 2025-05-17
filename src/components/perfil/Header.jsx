@@ -1,13 +1,32 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import LogoUnivesp from "/logo-univesp.svg?url";
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
+import useAuth from "../../contexts/useAuth";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { user, saveUser, saveToken } = useAuth();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleLogout = () => {
+    // Limpa os dados do usuário e token
+    saveUser(null);
+    saveToken(null);
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+
+    // Fecha o menu
+    setIsMenuOpen(false);
+
+    // Redireciona para a página de login
+    navigate("/login");
+  };
+
   return (
     <>
       <header className="flex items-center justify-between w-full h-16 px-4 py-2 ">
@@ -25,37 +44,47 @@ function Header() {
             <nav className="absolute top-full right-0 bg-white shadow-lg rounded-lg p-4 w-64">
               <ul className="flex flex-col gap-2">
                 <li>
-                  <a
-                    href="/profile"
-                    className="text-gray-800 hover:text-red-500"
+                  <button
+                    onClick={() => navigate(`/perfil/${user?.id}`)}
+                    className="text-gray-800 hover:text-red-500 w-full text-left"
                   >
                     Meu perfil
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a
-                    href="/edit-profile"
-                    className="text-gray-800 hover:text-red-500"
+                  <button
+                    onClick={() => navigate("/edit-profile")}
+                    className="text-gray-800 hover:text-red-500 w-full text-left"
                   >
                     Editar perfil
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a
-                    href="/question-board"
-                    className="text-gray-800 hover:text-red-500"
+                  <button
+                    onClick={() => navigate("/question-board")}
+                    className="text-gray-800 hover:text-red-500 w-full text-left"
                   >
                     Dúvidas
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a
-                    href="/question-creation"
-                    className="text-gray-800 hover:text-red-500"
+                  <button
+                    onClick={() => navigate("/question-creation")}
+                    className="text-gray-800 hover:text-red-500 w-full text-left"
                   >
                     Criar dúvidas
-                  </a>
+                  </button>
                 </li>
+                {user && (
+                  <li>
+                    <button
+                      onClick={handleLogout}
+                      className="text-gray-800 hover:text-red-500 w-full text-left"
+                    >
+                      Sair
+                    </button>
+                  </li>
+                )}
               </ul>
             </nav>
           )}

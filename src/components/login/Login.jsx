@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../contexts/useAuth";
+import { useEffect } from "react";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function Login() {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const { saveToken, saveUser } = useAuth();
+  const { saveToken, saveUser, user } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      navigate(`/perfil/${user.id}`);
+    }
+  }, [user]);
 
   const onSubmit = async (data) => {
     try {
@@ -61,7 +68,7 @@ function Login() {
           Entrar
         </button>
         <p>ou</p>
-        <Link className="w-full" to="/cadastro">
+        <Link className="w-full" to="/solicitacao-cadastro">
           <button className="btn bg-quinary text-secondary w-full">
             Registrar
           </button>

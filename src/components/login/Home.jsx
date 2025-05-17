@@ -13,7 +13,7 @@ function Home() {
           </button>
         </Link>
         <p className="text-secondary">ou</p>
-        <Link className="w-full" to="/cadastro">
+        <Link className="w-full" to="/solicitacao-cadastro">
           <button className="btn w-full">Registrar</button>
         </Link>
       </div>
