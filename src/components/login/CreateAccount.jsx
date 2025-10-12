@@ -70,7 +70,7 @@ function CreateAccount() {
         )}
       </div>
       <div className="flex flex-col gap-1 w-full items-center">
-        <button type="submit" className="bg-primary text-quaternary w-full">
+        <button type="submit" className="btn bg-primary text-quaternary w-full">
           Registrar
         </button>
         <p>ou</p>

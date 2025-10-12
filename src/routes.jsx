@@ -12,6 +12,7 @@ import EmailConfirmation from "./components/login/EmailConfirmation.jsx";
 import PasswordChanged from "./components/login/PasswordChanged.jsx";
 import PasswordReset from "./components/login/PasswordReset.jsx";
 import RequestRegistration from "./components/login/RequestRegistration.jsx";
+import Terms from "./components/login/Terms.jsx";
 import PerfilPage from "./pages/PerfilPage.jsx";
 import PerfilEditPage from "./pages/PerfilEditPage.jsx";
 import CreateQuestion from "./pages/NewQuestion.jsx";
@@ -37,6 +38,7 @@ const RoutesConfig = () => (
               path="solicitacao-cadastro"
               element={<RequestRegistration />}
             />
+            <Route path="termo-de-uso" element={<Terms />} />
           </Route>
           <Route path="perfil/:id" element={<PerfilPage />}></Route>
           <Route path="edit-profile" element={<PerfilEditPage />}></Route>

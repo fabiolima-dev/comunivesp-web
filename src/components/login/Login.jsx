@@ -68,7 +68,7 @@ function Login() {
           Entrar
         </button>
         <p>ou</p>
-        <Link className="w-full" to="/solicitacao-cadastro">
+        <Link className="w-full" to="/termo-de-uso">
           <button className="btn bg-quinary text-secondary w-full">
             Registrar
           </button>
