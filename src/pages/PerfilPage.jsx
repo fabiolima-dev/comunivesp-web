@@ -2,9 +2,9 @@ import { Outlet, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "../components/perfil/Header";
 import ProfileInfo from "../components/perfil/ProfileInfo";
-import Tags from "../components/perfil/Tags";
-import Status from "../components/perfil/Status";
+import CalculadoraMedia from "../components/perfil/Calculadora";
 import useAuth from "../contexts/useAuth";
+import { set } from "react-hook-form";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -12,6 +12,7 @@ function PerfilPage() {
   const { id } = useParams();
   const { user } = useAuth();
   const [perfil, setPerfil] = useState(null);
+  const [calcVisible, setCalcVisible] = useState(false);
 
   useEffect(() => {
     const fetchUsuario = async () => {
@@ -28,11 +29,23 @@ function PerfilPage() {
     fetchUsuario();
   }, [id]);
 
+  const showCalc = () => setCalcVisible(!calcVisible);
+
   return (
     <>
       <Header />
       <ProfileInfo perfil={perfil} />
       <Outlet />
+      <button
+        className="ml-4 px-4 py-2 bg-[#141313] text-white rounded"
+        onClick={showCalc}
+      >
+        Calculadora de média
+      </button>
+      {calcVisible ? (
+        <CalculadoraMedia onClose={() => setCalcVisible(false)} />
+      ) : null}
+
       {/* <h2 className="my-5 text-2xl font-bold">Interesses :</h2>
       <Tags /> */}
       {user && user.id === id && (
