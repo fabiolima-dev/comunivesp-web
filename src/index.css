@@ -35,3 +35,8 @@
     @apply bg-secondary text-quaternary rounded-2xl font-main font-bold h-10 w-80 cursor-pointer;
   }
 }
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield; /* Standard property for Firefox and other browsers */
+}
