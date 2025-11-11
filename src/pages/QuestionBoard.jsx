@@ -83,7 +83,7 @@ function QuestionBoard() {
                 user.id === duvida.professorId ? (
                   <button
                     onClick={() => navigate(`/question/${duvida.id}`)}
-                    className="bg-black p-1 mt-3 rounded-2xl text-white font-bold my-4 cursor-pointer"
+                    className="bg-black p-4 mt-3 rounded-2xl text-white font-bold my-4 cursor-pointer"
                   >
                     Visualizar
                   </button>

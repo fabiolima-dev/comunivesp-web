@@ -55,8 +55,8 @@ function NewQuestion() {
 
   return (
     <>
-      <div className="bg-[#f2f2f2] rounded-xl w-[100%] h-[100%]">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-4">
+      <div className="bg-[#f2f2f2] rounded-xl my-10">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-8">
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
               {error}
@@ -93,7 +93,7 @@ function NewQuestion() {
             rows="8"
             maxLength="1000"
             placeholder="Digite sua dúvida (máximo 1000 caracteres)"
-            className="py-1 w-full bg-tertiary rounded-2xl h-80 p-4 border-1"
+            className="py-1 w-full bg-white rounded h-80 p-4 border-1"
             value={duvida}
             onChange={(e) => setDuvida(e.target.value)}
             required
