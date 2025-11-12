@@ -18,6 +18,7 @@ import PerfilEditPage from "./pages/PerfilEditPage.jsx";
 import CreateQuestion from "./pages/NewQuestion.jsx";
 import QuestionPage from "./pages/QuestionPage.jsx";
 import QuestionBoard from "./pages/QuestionBoard.jsx";
+import UsefulLinks from "./pages/UsefulLinks.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 
 const RoutesConfig = () => (
@@ -40,6 +41,7 @@ const RoutesConfig = () => (
             />
             <Route path="termo-de-uso" element={<Terms />} />
           </Route>
+          <Route path="links-uteis" element={<UsefulLinks />}></Route>
           <Route path="perfil/:id" element={<PerfilPage />}></Route>
           <Route path="edit-profile" element={<PerfilEditPage />}></Route>
           <Route path="question-creation" element={<CreateQuestion />}></Route>

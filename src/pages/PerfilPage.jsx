@@ -36,26 +36,33 @@ function PerfilPage() {
       <Header />
       <ProfileInfo perfil={perfil} />
       <Outlet />
-      <button
-        className="ml-4 px-4 py-2 bg-[#141313] text-white rounded"
-        onClick={showCalc}
-      >
-        Calculadora de média
-      </button>
-      {calcVisible ? (
-        <CalculadoraMedia onClose={() => setCalcVisible(false)} />
-      ) : null}
-
-      {/* <h2 className="my-5 text-2xl font-bold">Interesses :</h2>
-      <Tags /> */}
-      {user && user.id === id && (
-        <a
-          className="py-1.5 px-20 bg-[#141313] text-white rounded-2xl font-poppins font-bold h-10 w-80 cursor-pointer"
-          href="/edit-profile"
+      <div className="h-10 flex gap-6">
+        <button
+          className="py-1.5 px-20 bg-[#141313] text-white rounded-2xl font-poppins font-bold h-full cursor-pointer"
+          onClick={showCalc}
         >
-          Editar Perfil
+          Calculadora de média
+        </button>
+        {calcVisible ? (
+          <CalculadoraMedia onClose={() => setCalcVisible(false)} />
+        ) : null}
+        <a
+          className="py-1.5 px-20 bg-[#141313] text-white rounded-2xl font-poppins font-bold h-full cursor-pointer"
+          href="/links-uteis"
+        >
+          Links Úteis
         </a>
-      )}
+        {/* <h2 className="my-5 text-2xl font-bold">Interesses :</h2>
+      <Tags /> */}
+        {user && user.id === id && (
+          <a
+            className="py-1.5 px-20 bg-[#141313] text-white rounded-2xl font-poppins font-bold h-full cursor-pointer"
+            href="/edit-profile"
+          >
+            Editar Perfil
+          </a>
+        )}
+      </div>
       {/* <Status /> */}
     </>
   );

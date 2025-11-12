@@ -8,7 +8,7 @@ function RequestRegistration() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -53,7 +53,13 @@ function RequestRegistration() {
         })}
       ></input>
       {errors.email && <p className="text-primary">{errors.email.message}</p>}
-      <button className="btn bg-primary text-quaternary w-full">Enviar</button>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="btn bg-primary text-quaternary w-full"
+      >
+        {isSubmitting ? "Enviando..." : "Enviar"}
+      </button>
     </form>
   );
 }
